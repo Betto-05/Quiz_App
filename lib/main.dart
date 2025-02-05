@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/screens/main_screen.dart';
 
-void main() {
+// Import ffi
+
+void main()async {
   runApp(const Quiz());
+
 }
 
 class Quiz extends StatelessWidget {
