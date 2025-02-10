@@ -25,10 +25,24 @@ class DatabaseServices {
     if (!await File(path).exists()) {
       // If not, copy from assets
       var data = await rootBundle.load('assets/Quiz_Database.db');
-      List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
       await File(path).writeAsBytes(bytes);
     }
 
     return await openDatabase(path);
+  }
+
+  Future<void> insetUserName(String userName) async {
+    await _database!.insert('Users', {'Username': userName});
+  }
+
+  Future<String?> getUsername() async {
+    final db = await database;
+
+    final List<Map<String, dynamic>> result =
+        await db.query('Users', columns: ['Username'], limit: 1);
+
+    return result.isNotEmpty ? result.first['Username'] as String : null;
   }
 }

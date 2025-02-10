@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:quiz/screens/main_screen.dart';
+import 'package:quiz/services/database_services.dart';
 
 class IntroductionScreenPage extends StatelessWidget {
   final GlobalKey<IntroductionScreenState> introKey =
@@ -167,12 +168,14 @@ class IntroductionScreenPage extends StatelessWidget {
               ),
             );
           } else {
+            DatabaseServices().insetUserName(userName!);
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const MainScreen()),
             );
           }
         },
+
         onSkip: () {
           introKey.currentState?.animateScroll(3); // Navigate to the last page
         },

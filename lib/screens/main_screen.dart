@@ -4,6 +4,7 @@ import 'package:quiz/Components/subject_card.dart';
 import 'package:quiz/screens/exam_prepartion_screen.dart';
 import 'package:quiz/screens/profile_screen.dart';
 import 'package:quiz/screens/subjects_screen.dart';
+import 'package:quiz/services/database_services.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -21,7 +22,7 @@ class MainScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "Hello, Ibrahim",
+                    "Hello, ",
                     style: TextStyle(fontSize: 18),
                   ),
                   GestureDetector(
