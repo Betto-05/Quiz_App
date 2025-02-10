@@ -3,9 +3,8 @@ import 'package:quiz/screens/main_screen.dart';
 
 // Import ffi
 
-void main()async {
+void main() async {
   runApp(const Quiz());
-
 }
 
 class Quiz extends StatelessWidget {
@@ -13,8 +12,9 @@ class Quiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MainScreen(),
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'Kufam'),
+      home: const MainScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
