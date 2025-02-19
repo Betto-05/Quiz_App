@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="Quiz_Database.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1557"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Options" custom_title="0" dock_id="1" table="4,7:mainOptions"/><dock_state state="000000ff00000000fd00000001000000020000043c000002b6fc0100000001fb000000160064006f0063006b00420072006f007700730065003101000000000000043c0000013300ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Options" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="59"/><column index="2" value="72"/><column index="3" value="300"/><column index="4" value="60"/><column index="5" value="64"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(1, 2, 'What does HCI stand for?', 1),
+(2, 2, 'Which of the following is NOT a characteristic of HCI products?', 1),
+(3, 2, 'What is one of the goals of HCI?', 1),
+(4, 2, 'Which of the following is a type of reasoning mentioned in the document?', 1),
+(5, 2, 'What is the range of sound that the human ear can process?', 1),
+(6, 2, 'Which of the following is NOT an input device?', 1),
+(7, 2, 'What does STM stand for in memory types?', 1),
+(8, 2, 'Which type of memory is used for temporary data storage while working?', 1),
+(9, 2, 'What is the primary focus of the development phase in HCI?', 1),
+(10, 2, 'Human memory includes which of the following types?', 1),
+(11, 2, 'What is a key factor in selecting input devices?', 1),
+(12, 2, 'Which type of reasoning involves deriving explanations for observed events?', 1),
+(13, 2, 'The human eye is primarily responsible for which type of processing?', 1),
+(14, 2, 'Which device is used for input in a computer system?', 1),
+(15, 2, 'Which of the following is essential for effective interaction in HCI?', 1),
+(16, 2, 'What type of memory lasts longer, allowing for data retention?', 1),
+(17, 2, 'What does the term &quot;interaction&quot; primarily refer to in HCI?', 1),
+(18, 2, 'Which input device is commonly used for typing?', 1),
+(19, 2, 'What is the role of feedback in HCI?', 1),
+(20, 2, 'Which of the following is a psychological aspect studied in HCI?', 1);
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(1, 1, 'Human-Centric Interaction', 0, 2),
+(1, 2, 'Human-Computer Interaction', 1, 2),
+(1, 3, 'Human-Computer Interface', 0, 2),
+(1, 4, 'Human Communication Interaction', 0, 2),
+
+(2, 5, 'Useful', 0, 2),
+(2, 6, 'Usable', 0, 2),
+(2, 7, 'Complex', 1, 2),
+(2, 8, 'Used', 0, 2),
+
+(3, 9, 'Increase hardware costs', 0, 2),
+(3, 10, 'Develop more complex interfaces', 0, 2),
+(3, 11, 'Understand how people use technology', 1, 2),
+(3, 12, 'Minimize user interaction', 0, 2),
+
+(4, 13, 'Deductive reasoning', 1, 2),
+(4, 14, 'Intuitive reasoning', 0, 2),
+(4, 15, 'Implicit reasoning', 0, 2),
+(4, 16, 'Emotional reasoning', 0, 2),
+
+(5, 17, '20 Hz to 20 kHz', 0, 2),
+(5, 18, '20 Hz to 15 kHz', 1, 2),
+(5, 19, '100 Hz to 1 kHz', 0, 2),
+(5, 20, '10 Hz to 10 kHz', 0, 2),
+
+(6, 21, 'Keyboard', 0, 2),
+(6, 22, 'Mouse', 0, 2),
+(6, 23, 'Monitor', 1, 2),
+(6, 24, 'Scanner', 0, 2),
+
+(7, 25, 'Short-term Memory', 1, 2),
+(7, 26, 'Sensory Time Memory', 0, 2),
+(7, 27, 'Standard Time Memory', 0, 2),
+(7, 28, 'Statistical Time Memory', 0, 2),
+
+(8, 29, 'Long-term Memory', 0, 2),
+(8, 30, 'Sensory Memory', 0, 2),
+(8, 31, 'Short-term Memory', 1, 2),
+(8, 32, 'Permanent Memory', 0, 2),
+
+(9, 33, 'Designing more complex software', 0, 2),
+(9, 34, 'Evaluating user interactions', 1, 2),
+(9, 35, 'Implementing hardware', 0, 2),
+(9, 36, 'Enhancing aesthetics', 0, 2),
+
+(10, 37, 'Short-term and Long-term', 1, 2),
+(10, 38, 'Visual and Auditory', 0, 2),
+(10, 39, 'Logical and Emotional', 0, 2),
+(10, 40, 'Sensory and Cognitive', 0, 2),
+
+(11, 41, 'User preference', 1, 2),
+(11, 42, 'Aesthetics', 0, 2),
+(11, 43, 'Cost', 0, 2),
+(11, 44, 'Brand', 0, 2),
+
+(12, 45, 'Deductive reasoning', 0, 2),
+(12, 46, 'Inductive reasoning', 0, 2),
+(12, 47, 'Abductive reasoning', 1, 2),
+(12, 48, 'Emotional reasoning', 0, 2),
+
+(13, 49, 'Auditory processing', 0, 2),
+(13, 50, 'Visual processing', 1, 2),
+(13, 51, 'Haptic processing', 0, 2),
+(13, 52, 'Cognitive processing', 0, 2),
+
+(14, 53, 'Monitor', 0, 2),
+(14, 54, 'Printer', 0, 2),
+(14, 55, 'Scanner', 0, 2),
+(14, 56, 'Keyboard', 1, 2),
+
+(15, 57, 'Complexity', 0, 2),
+(15, 58, 'Usability', 1, 2),
+(15, 59, 'Ambiguity', 0, 2),
+(15, 60, 'Inaccessibility', 0, 2),
+
+(16, 61, 'Short-term Memory', 0, 2),
+(16, 62, 'Sensory Memory', 0, 2),
+(16, 63, 'Long-term Memory', 1, 2),
+(16, 64, 'Working Memory', 0, 2),
+
+(17, 65, 'Human to human communication', 0, 2),
+(17, 66, 'User and computer communication', 1, 2),
+(17, 67, 'Hardware connections', 0, 2),
+(17, 68, 'Software updates', 0, 2),
+
+(18, 69, 'Mouse', 0, 2),
+(18, 70, 'Joystick', 0, 2),
+(18, 71, 'Keyboard', 1, 2),
+(18, 72, 'Scanner', 0, 2),
+
+(19, 73, 'To confuse users', 0, 2),
+(19, 74, 'To enhance usability', 1, 2),
+(19, 75, 'To increase complexity', 0, 2),
+(19, 76, 'To reduce interaction', 0, 2),
+
+(20, 77, 'Hardware efficiency', 0, 2),
+(20, 78, 'User learning processes', 1, 2),
+(20, 79, 'Software updates', 0, 2),
+(20, 80, 'Network speed', 0, 2);
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(21, 2, 'What is the primary focus of interaction in HCI?', 2),
+(22, 2, 'What are the two categories of interaction?', 2),
+(23, 2, 'What does Norman’s model emphasize?', 2),
+(24, 2, 'Which of the following is NOT a factor in ergonomics?', 2),
+(25, 2, 'What does the term &quot;task analysis&quot; refer to?', 2),
+(26, 2, 'What is the purpose of the design process?', 2),
+(27, 2, 'Which interface style involves point and click?', 2),
+(28, 2, 'What does the acronym WIMP stand for in interaction styles?', 2),
+(29, 2, 'What is the role of user’s language in interaction?', 2),
+(30, 2, 'What is meant by &quot;gulfs of execution&quot; in Norman’s model?', 2);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(21, 81, 'Communication between users and systems', 1, 2),
+(21, 82, 'Communication between users only', 0, 2),
+(21, 83, 'System performance only', 0, 2),
+(21, 84, 'None of the above', 0, 2),
+
+(22, 85, 'Direct and Indirect interaction', 1, 2),
+(22, 86, 'Visual and Auditory interaction', 0, 2),
+(22, 87, 'Human and Machine interaction', 0, 2),
+(22, 88, 'Input and Output interaction', 0, 2),
+
+(23, 89, 'Human error', 0, 2),
+(23, 90, 'Gulfs of execution', 1, 2),
+(23, 91, 'Direct communication', 0, 2),
+(23, 92, 'Feedback only', 0, 2),
+
+(24, 93, 'Arrangement of controls', 0, 2),
+(24, 94, 'User preferences', 0, 2),
+(24, 95, 'Health issues', 1, 2),
+(24, 96, 'Environmental conditions', 0, 2),
+
+(25, 97, 'Understanding user behavior', 0, 2),
+(25, 98, 'Identifying the problem space', 1, 2),
+(25, 99, 'Defining goals', 0, 2),
+(25, 100, 'Evaluating outcomes', 0, 2),
+
+(26, 101, 'Achieving goals within constraints', 1, 2),
+(26, 102, 'Maximizing system performance', 0, 2),
+(26, 103, 'Reducing user input', 0, 2),
+(26, 104, 'Simplifying tasks', 0, 2),
+
+(27, 105, 'Command line interface', 0, 2),
+(27, 106, 'WIMP interface', 1, 2),
+(27, 107, 'Text-based interface', 0, 2),
+(27, 108, 'Web-based interface', 0, 2),
+
+(28, 109, 'Windows, Icons, Menus, Pointer', 1, 2),
+(28, 110, 'Web, Input, Mouse, Performance', 0, 2),
+(28, 111, 'Words, Input, Mouse, Presentation', 0, 2),
+(28, 112, 'None of the above', 0, 2),
+
+(29, 113, 'To enhance system performance', 0, 2),
+(29, 114, 'To facilitate communication', 1, 2),
+(29, 115, 'To minimize errors', 0, 2),
+(29, 116, 'To increase complexity', 0, 2),
+
+(30, 117, 'The gap between user intention and system action', 1, 2),
+(30, 118, 'The difference in user experience', 0, 2),
+(30, 119, 'The feedback provided by the system', 0, 2),
+(30, 120, 'The speed of the system response', 0, 2);
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(31, 2, 'What is the purpose of think aloud evaluation?', 4),
+(32, 2, 'Which method records user interactions for analysis?', 4),
+(33, 2, 'What technique helps in monitoring physiological responses?', 4),
+(34, 2, 'What is the role of interviews in user participation evaluation?', 4),
+(35, 2, 'What do field studies focus on?', 4),
+(36, 2, 'What is an example of a query technique?', 4),
+(37, 2, 'What does the term &quot;empirical methods&quot; refer to?', 4),
+(38, 2, 'What is the purpose of automatic protocol analysis tools?', 4),
+(39, 2, 'What is a major benefit of cooperative evaluation?', 4),
+(40, 2, 'What type of evaluation is conducted in a usability laboratory?', 4);
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(31, 121, 'To elicit feedback from users during tasks', 1, 2),
+(31, 122, 'To minimize user errors', 0, 2),
+(31, 123, 'To improve system speed', 0, 2),
+(31, 124, 'To analyze user demographics', 0, 2),
+
+(32, 125, 'Protocol analysis', 1, 2),
+(32, 126, 'Field studies', 0, 2),
+(32, 127, 'Heuristic evaluation', 0, 2),
+(32, 128, 'Cognitive walkthrough', 0, 2),
+
+(33, 129, 'Eye tracking', 1, 2),
+(33, 130, 'Heuristic evaluation', 0, 2),
+(33, 131, 'User surveys', 0, 2),
+(33, 132, 'Focus groups', 0, 2),
+
+(34, 133, 'To gather qualitative insights', 1, 2),
+(34, 134, 'To measure system performance', 0, 2),
+(34, 135, 'To test network security', 0, 2),
+(34, 136, 'To analyze hardware requirements', 0, 2),
+
+(35, 137, 'User interaction in real environments', 1, 2),
+(35, 138, 'User feedback in controlled settings', 0, 2),
+(35, 139, 'System performance metrics', 0, 2),
+(35, 140, 'Market analysis', 0, 2),
+
+(36, 141, 'Interviews', 1, 2),
+(36, 142, 'Usability testing', 0, 2),
+(36, 143, 'Field studies', 0, 2),
+(36, 144, 'Performance metrics', 0, 2),
+
+(37, 145, 'Statistical analysis of data', 0, 2),
+(37, 146, 'Experimental evaluation methods', 1, 2),
+(37, 147, 'Qualitative interviews', 0, 2),
+(37, 148, 'Focus groups', 0, 2),
+
+(38, 149, 'To automate data collection', 1, 2),
+(38, 150, 'To improve system design', 0, 2),
+(38, 151, 'To decrease user errors', 0, 2),
+(38, 152, 'To enhance visual aesthetics', 0, 2),
+
+(39, 153, 'Encourages open user feedback', 1, 2),
+(39, 154, 'Limits user input', 0, 2),
+(39, 155, 'Reduces interaction time', 0, 2),
+(39, 156, 'Focuses on system speed', 0, 2),
+
+(40, 157, 'Laboratory studies', 1, 2),
+(40, 158, 'Field studies', 0, 2),
+(40, 159, 'Heuristic evaluations', 0, 2),
+(40, 160, 'User surveys', 0, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(41, 2, 'What is a common method for evaluating user satisfaction?', 4),
+(42, 2, 'Which evaluation method focuses on user behavior in real-time?', 4),
+(43, 2, 'What is the goal of usability testing?', 4),
+(44, 2, 'What does a usability laboratory typically provide?', 4),
+(45, 2, 'What does the term &quot;think aloud&quot; mean in evaluations?', 4),
+(46, 2, 'Which technique involves users discussing their thoughts while using a system?', 4),
+(47, 2, 'What is one advantage of using questionnaires in evaluation?', 4),
+(48, 2, 'Which of the following is NOT a physiological response measurement?', 4),
+(49, 2, 'What does the acronym HCI stand for?', 4),
+(50, 2, 'What is a primary focus of expert evaluations?', 4);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(41, 161, 'Surveys', 1, 2),
+(41, 162, 'System performance metrics', 0, 2),
+(41, 163, 'Hardware specifications', 0, 2),
+(41, 164, 'Market research', 0, 2),
+
+(42, 165, 'Field studies', 1, 2),
+(42, 166, 'Heuristic evaluations', 0, 2),
+(42, 167, 'Cognitive walkthroughs', 0, 2),
+(42, 168, 'Laboratory studies', 0, 2),
+
+(43, 169, 'To identify usability issues', 1, 2),
+(43, 170, 'To improve marketing strategies', 0, 2),
+(43, 171, 'To assess system speed', 0, 2),
+(43, 172, 'To evaluate software costs', 0, 2),
+
+(44, 173, 'Controlled testing environment', 1, 2),
+(44, 174, 'Outdoor testing environment', 0, 2),
+(44, 175, 'User feedback sessions', 0, 2),
+(44, 176, 'Online surveys', 0, 2),
+
+(45, 177, 'Users verbalize their thoughts', 1, 2),
+(45, 178, 'Users write down their feedback', 0, 2),
+(45, 179, 'Users complete a questionnaire', 0, 2),
+(45, 180, 'Users observe others', 0, 2),
+
+(46, 181, 'Think aloud evaluation', 1, 2),
+(46, 182, 'User testing', 0, 2),
+(46, 183, 'Cognitive walkthrough', 0, 2),
+(46, 184, 'Field study', 0, 2),
+
+(47, 185, 'Quick data collection', 1, 2),
+(47, 186, 'In-depth qualitative analysis', 0, 2),
+(47, 187, 'Real-time user observation', 0, 2),
+(47, 188, 'Hardware testing', 0, 2),
+
+(48, 189, 'Heart rate monitoring', 0, 2),
+(48, 190, 'Eye tracking', 1, 2),
+(48, 191, 'User surveys', 0, 2),
+(48, 192, 'System logging', 0, 2),
+
+(49, 193, 'Human-Computer Interaction', 1, 2),
+(49, 194, 'Human-Centered Interface', 0, 2),
+(49, 195, 'High-Complexity Interaction', 0, 2),
+(49, 196, 'Hardware-Computer Integration', 0, 2),
+
+(50, 197, 'User interface design', 0, 2),
+(50, 198, 'Expert analysis', 1, 2),
+(50, 199, 'System performance', 0, 2),
+(50, 200, 'Market research', 0, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(51, 2, 'What is the first principle of universal design?', 5),
+(52, 2, 'How many principles of universal design are there?', 5),
+(53, 2, 'What does &quot;equitable use&quot; mean in universal design?', 5),
+(54, 2, 'Which principle emphasizes flexibility in use?', 5),
+(55, 2, 'What is meant by &quot;perceptible information&quot;?', 5),
+(56, 2, 'What does the principle of &quot;tolerance for error&quot; focus on?', 5),
+(57, 2, 'Which principle aims to minimize physical effort?', 5),
+(58, 2, 'What is a key benefit of multi-modal interaction?', 5),
+(59, 2, 'Which type of sound is used for audio confirmation in interfaces?', 5),
+(60, 2, 'What does cutaneous perception refer to?', 5),
+(61, 2, 'What is the focus of gesture recognition?', 5),
+(62, 2, 'Which group is specifically mentioned in designing for diversity?', 5),
+(63, 2, 'What is an example of a physical impairment?', 5),
+(64, 2, 'Which age group considerations are addressed in design?', 5),
+(65, 2, 'What is a key consideration when designing for cultural differences?', 5),
+(66, 2, 'What is the goal of universal design?', 5),
+(67, 2, 'How can multi-modal systems benefit users with impairments?', 5),
+(68, 2, 'What should designers consider to avoid excluding users?', 5),
+(69, 2, 'Which design principle relates to the arrangement of information?', 5),
+(70, 2, 'What is the impact of designing for screen reading systems?', 5);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(51, 201, 'Equitable use', 1, 2),
+(51, 202, 'Flexibility in use', 0, 2),
+(51, 203, 'Perceptible information', 0, 2),
+(51, 204, 'Simple and intuitive to use', 0, 2),
+
+(52, 205, 'Five', 0, 2),
+(52, 206, 'Six', 0, 2),
+(52, 207, 'Seven', 1, 2),
+(52, 208, 'Eight', 0, 2),
+
+(53, 209, 'Design is appealing to all users', 1, 2),
+(53, 210, 'Design excludes certain users', 0, 2),
+(53, 211, 'Design is complex', 0, 2),
+(53, 212, 'Design is only for experienced users', 0, 2),
+
+(54, 213, 'Principle One', 0, 2),
+(54, 214, 'Principle Two', 1, 2),
+(54, 215, 'Principle Three', 0, 2),
+(54, 216, 'Principle Four', 0, 2),
+
+(55, 217, 'Making information accessible to all', 1, 2),
+(55, 218, 'Minimizing user errors', 0, 2),
+(55, 219, 'Providing aesthetic designs', 0, 2),
+(55, 220, 'Limiting information', 0, 2),
+
+(56, 221, 'Minimizing mistakes', 1, 2),
+(56, 222, 'Allowing maximum user input', 0, 2),
+(56, 223, 'Improving visual design', 0, 2),
+(56, 224, 'Enhancing performance', 0, 2),
+
+(57, 225, 'Low physical effort', 1, 2),
+(57, 226, 'Flexibility in use', 0, 2),
+(57, 227, 'Equitable use', 0, 2),
+(57, 228, 'Perceptible information', 0, 2),
+
+(58, 229, 'Providing multiple input methods', 1, 2),
+(58, 230, 'Limiting user options', 0, 2),
+(58, 231, 'Focusing on visual design only', 0, 2),
+(58, 232, 'Ignoring user feedback', 0, 2),
+
+(59, 233, 'Speech and non-speech sound', 1, 2),
+(59, 234, 'Only speech sound', 0, 2),
+(59, 235, 'Only non-speech sound', 0, 2),
+(59, 236, 'Visual cues', 0, 2),
+
+(60, 237, 'Tactile sensations through the skin', 1, 2),
+(60, 238, 'Visual perception', 0, 2),
+(60, 239, 'Auditory sensations', 0, 2),
+(60, 240, 'Cognitive processing', 0, 2),
+
+(61, 241, 'Recognizing hand movements', 1, 2),
+(61, 242, 'Analyzing speech patterns', 0, 2),
+(61, 243, 'Measuring physical strength', 0, 2),
+(61, 244, 'Understanding user preferences', 0, 2),
+
+(62, 245, 'Users with disabilities', 1, 2),
+(62, 246, 'Only elderly users', 0, 2),
+(62, 247, 'Only children', 0, 2),
+(62, 248, 'Only tech-savvy users', 0, 2),
+
+(63, 249, 'Visual impairment', 1, 2),
+(63, 250, 'Heightened cognitive ability', 0, 2),
+(63, 251, 'Advanced motor skills', 0, 2),
+(63, 252, 'Perfect hearing', 0, 2),
+
+(64, 253, 'Older people and children', 1, 2),
+(64, 254, 'Only elderly people', 0, 2),
+(64, 255, 'Only children', 0, 2),
+(64, 256, 'Only teenagers', 0, 2),
+
+(65, 257, 'Color usage', 1, 2),
+(65, 258, 'Technical jargon', 0, 2),
+(65, 259, 'Only font size', 0, 2),
+(65, 260, 'User preferences only', 0, 2),
+
+(66, 261, 'Accessibility for all users', 1, 2),
+(66, 262, 'Exclusivity for specific groups', 0, 2),
+(66, 263, 'Limiting design choices', 0, 2),
+(66, 264, 'Focusing on aesthetics only', 0, 2),
+
+(67, 265, 'Utilizing multiple input methods', 1, 2),
+(67, 266, 'Restricting user access', 0, 2),
+(67, 267, 'Ignoring user feedback', 0, 2),
+(67, 268, 'Focusing on speed alone', 0, 2),
+
+(68, 269, 'Potential exclusions of users', 1, 2),
+(68, 270, 'Increasing complexity', 0, 2),
+(68, 271, 'Reducing design options', 0, 2),
+(68, 272, 'Limiting user input', 0, 2),
+
+(69, 273, 'Information layout', 1, 2),
+(69, 274, 'System speed', 0, 2),
+(69, 275, 'Visual aesthetics', 0, 2),
+(69, 276, 'Hardware requirements', 0, 2),
+
+(70, 277, 'Improving accessibility for all', 1, 2),
+(70, 278, 'Making systems more complex', 0, 2),
+(70, 279, 'Limiting user options', 0, 2),
+(70, 280, 'Focusing solely on aesthetics', 0, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(71, 2, 'Universal design focuses on excluding users with disabilities.', 5),
+(72, 2, 'Multi-modal interaction can enhance usability for all users.', 5),
+(73, 2, 'The principles of universal design are aimed only at elderly users.', 5),
+(74, 2, 'Designing for cultural differences is not necessary in universal design.', 5),
+(75, 2, 'Speech recognition is a part of multi-modal interaction.', 5);
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(71, 281, 'True', 0, 2),
+(71, 282, 'False', 1, 2),
+
+(72, 283, 'True', 1, 2),
+(72, 284, 'False', 0, 2),
+
+(73, 285, 'True', 0, 2),
+(73, 286, 'False', 1, 2),
+
+(74, 287, 'True', 0, 2),
+(74, 288, 'False', 1, 2),
+
+(75, 289, 'True', 1, 2),
+(75, 290, 'False', 0, 2);
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(76, 2, 'What is a key requirement of user support?', 6),
+(77, 2, 'What does &quot;robustness&quot; in user support refer to?', 6),
+(78, 2, 'Which approach provides help based on the current task context?', 6),
+(79, 2, 'What is the purpose of command assistance?', 6),
+(80, 2, 'What type of help is provided by online tutorials?', 6),
+(81, 2, 'What do wizards and assistants help with?', 6),
+(82, 2, 'What is context-sensitive help?', 6),
+(83, 2, 'What does unobtrusiveness in user support mean?', 6),
+(84, 2, 'What is a potential downside of assistants in user support?', 6),
+(85, 2, 'What is one approach to user support mentioned?', 6),
+(86, 2, 'What does flexibility in user support allow?', 6),
+(87, 2, 'What is a characteristic of online documentation?', 6),
+(88, 2, 'What is the role of command prompts?', 6),
+(89, 2, 'What is a common problem with knowledge representation?', 6),
+(90, 2, 'What is a key aspect of designing user support systems?', 6),
+(91, 2, 'How should help be displayed?', 6),
+(92, 2, 'What is adaptive help systems focused on?', 6),
+(93, 2, 'What do rule-based techniques involve?', 6),
+(94, 2, 'What must wizards allow users to do?', 6),
+(95, 2, 'What does &quot;continuous access&quot; refer to in user support?', 6);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(76, 291, 'Availability', 1, 2),
+(76, 292, 'Cost-effectiveness', 0, 2),
+(76, 293, 'Aesthetic design', 0, 2),
+(76, 294, 'Speed of access', 0, 2),
+
+(77, 295, 'Error handling and predictable behavior', 1, 2),
+(77, 296, 'Visual appeal', 0, 2),
+(77, 297, 'User engagement', 0, 2),
+(77, 298, 'Complexity of use', 0, 2),
+
+(78, 299, 'Context-sensitive help', 1, 2),
+(78, 300, 'Command prompts', 0, 2),
+(78, 301, 'Online documentation', 0, 2),
+(78, 302, 'Wizards', 0, 2),
+
+(79, 303, 'To assist with command usage', 1, 2),
+(79, 304, 'To provide comprehensive training', 0, 2),
+(79, 305, 'To enhance visual design', 0, 2),
+(79, 306, 'To reduce system complexity', 0, 2),
+
+(80, 307, 'Guiding users through application basics', 1, 2),
+(80, 308, 'Providing technical specifications', 0, 2),
+(80, 309, 'Offering aesthetic suggestions', 0, 2),
+(80, 310, 'Limiting user options', 0, 2),
+
+(81, 311, 'Task-specific guidance', 1, 2),
+(81, 312, 'General system information', 0, 2),
+(81, 313, 'User preference settings', 0, 2),
+(81, 314, 'Visual aesthetics', 0, 2),
+
+(82, 315, 'Help tailored to the users current context', 1, 2),
+(82, 316, 'General help information', 0, 2),
+(82, 317, 'Offline help resources', 0, 2),
+(82, 318, 'Help based on user history', 0, 2),
+
+(83, 319, 'Does not interrupt user tasks', 1, 2),
+(83, 320, 'Requires constant attention from the user', 0, 2),
+(83, 321, 'Limits user interaction', 0, 2),
+(83, 322, 'Is overly complex', 0, 2),
+
+(84, 323, 'Can be irritating to users', 1, 2),
+(84, 324, 'Always enhances user experience', 0, 2),
+(84, 325, 'Requires no user control', 0, 2),
+(84, 326, 'Is only useful in specific contexts', 0, 2),
+
+(85, 327, 'Wizards', 1, 2),
+(85, 328, 'Online tutorials', 0, 2),
+(85, 329, 'Paper documentation', 0, 2),
+(85, 330, 'Command prompts', 0, 2),
+
+(86, 331, 'Allows user interaction based on experience', 1, 2),
+(86, 332, 'Limits user choices', 0, 2),
+(86, 333, 'Focuses only on novice users', 0, 2),
+(86, 334, 'Requires extensive training', 0, 2),
+
+(87, 335, 'Available in a common medium', 1, 2),
+(87, 336, 'Difficult to navigate', 0, 2),
+(87, 337, 'Requires user registration', 0, 2),
+(87, 338, 'Only available offline', 0, 2),
+
+(88, 339, 'Providing usage information on errors', 1, 2),
+(88, 340, 'Offering detailed training modules', 0, 2),
+(88, 341, 'Enhancing visual design', 0, 2),
+(88, 342, 'Limiting user input', 0, 2),
+
+(89, 343, 'Accuracy in representation', 1, 2),
+(89, 344, 'Uniform design', 0, 2),
+(89, 345, 'Increased complexity', 0, 2),
+(89, 346, 'User engagement', 0, 2),
+
+(90, 347, 'Effective presentation of help', 1, 2),
+(90, 348, 'Reducing user options', 0, 2),
+(90, 349, 'Increasing complexity', 0, 2),
+(90, 350, 'Only focusing on aesthetics', 0, 2),
+
+(91, 351, 'Clear and understandable', 1, 2),
+(91, 352, 'Overly technical', 0, 2),
+(91, 353, 'Difficult to access', 0, 2),
+(91, 354, 'Only available in print', 0, 2),
+
+(92, 355, 'Providing personalized assistance', 1, 2),
+(92, 356, 'Limiting user choices', 0, 2),
+(92, 357, 'Focusing solely on aesthetics', 0, 2),
+(92, 358, 'Ignoring feedback', 0, 2),
+
+(93, 359, 'Involves representing knowledge effectively', 1, 2),
+(93, 360, 'Only focuses on visual design', 0, 2),
+(93, 361, 'Requires no user input', 0, 2),
+(93, 362, 'Is not necessary for user support', 0, 2),
+
+(94, 363, 'Allow users to go back during tasks', 1, 2),
+(94, 364, 'Limit user options', 0, 2),
+(94, 365, 'Require strict adherence to steps', 0, 2),
+(94, 366, 'Focus only on aesthetics', 0, 2),
+
+(95, 367, 'Access while using the main application', 1, 2),
+(95, 368, 'Only available offline', 0, 2),
+(95, 369, 'Requires user registration', 0, 2),
+(95, 370, 'Limited to certain tasks', 0, 2);
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(96, 2, 'User support must always be intrusive to be effective.', 6),
+(97, 2, 'Context-sensitive help is based on the user’s current task.', 6),
+(98, 2, 'Wizards can guide users through complex tasks.', 6),
+(99, 2, 'Online documentation is always easy to browse.', 6),
+(100, 2, 'Adaptive help systems can improve user experience.', 6);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(96, 371, 'True', 0, 2),
+(96, 372, 'False', 1, 2),
+
+(97, 373, 'True', 1, 2),
+(97, 374, 'False', 0, 2),
+
+(98, 375, 'True', 1, 2),
+(98, 376, 'False', 0, 2),
+
+(99, 377, 'True', 0, 2),
+(99, 378, 'False', 1, 2),
+
+(100, 379, 'True', 1, 2),
+(100, 380, 'False', 0, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(101, 2, 'What is the definition of a user in HCI?', 3),
+(102, 2, 'What term describes parts of the computer that users interact with?', 3),
+(103, 2, 'What is the primary function of a word processor?', 3),
+(104, 2, 'What design rule relates to the ease with which new users can learn a system?', 3),
+(105, 2, 'What does flexibility in user interaction allow?', 3),
+(106, 2, 'What is one aspect of robustness in user support?', 3),
+(107, 2, 'According to Shneiderman, what should be strived for in interface design?', 3),
+(108, 2, 'What is one of Norman’s rules for interface design?', 3),
+(109, 2, 'What does &quot;enjoyability&quot; refer to in user interfaces?', 3),
+(110, 2, 'What are the three main components of usability according to ISO 9241?', 3),
+(111, 2, 'What does effectiveness in usability mean?', 3),
+(112, 2, 'What is meant by efficiency in usability?', 3),
+(113, 2, 'What is the goal of learnability in design rules?', 3),
+(114, 2, 'What is &quot;observability&quot; in the context of robustness?', 3),
+(115, 2, 'What is &quot;responsiveness&quot; in user interaction?', 3),
+(116, 2, 'What does &quot;task conformance&quot; refer to?', 3),
+(117, 2, 'What should be offered to frequent users according to Shneiderman’s rules?', 3),
+(118, 2, 'What does &quot;error prevention&quot; entail in interface design?', 3),
+(119, 2, 'What is the benefit of allowing easy reversal of actions?', 3),
+(120, 2, 'What does &quot;mental model&quot; refer to in interface design?', 3);
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(101, 381, 'An individual user or group of users', 1, 2),
+(101, 382, 'Only a single user', 0, 2),
+(101, 383, 'A computer system', 0, 2),
+(101, 384, 'A software application', 0, 2),
+
+(102, 385, 'User interface', 1, 2),
+(102, 386, 'Operating system', 0, 2),
+(102, 387, 'Hardware', 0, 2),
+(102, 388, 'Database', 0, 2),
+
+(103, 389, 'To edit a document', 1, 2),
+(103, 390, 'To create graphics', 0, 2),
+(103, 391, 'To manage files', 0, 2),
+(103, 392, 'To play media', 0, 2),
+
+(104, 393, 'Learnability', 1, 2),
+(104, 394, 'Robustness', 0, 2),
+(104, 395, 'Flexibility', 0, 2),
+(104, 396, 'Consistency', 0, 2),
+
+(105, 397, 'Multiple ways to exchange information', 1, 2),
+(105, 398, 'Single method of interaction', 0, 2),
+(105, 399, 'Complex interactions only', 0, 2),
+(105, 400, 'Limited user control', 0, 2),
+
+(106, 401, 'Error handling and predictable behavior', 1, 2),
+(106, 402, 'User engagement', 0, 2),
+(106, 403, 'Visual design considerations', 0, 2),
+(106, 404, 'Only user feedback', 0, 2),
+
+(107, 405, 'Consistency in action sequences', 1, 2),
+(107, 406, 'Ignoring user feedback', 0, 2),
+(107, 407, 'Limiting user options', 0, 2),
+(107, 408, 'Increasing complexity', 0, 2),
+
+(108, 409, 'Make things visible for users', 1, 2),
+(108, 410, 'Reduce user control', 0, 2),
+(108, 411, 'Increase complexity of tasks', 0, 2),
+(108, 412, 'Ignore user errors', 0, 2),
+
+(109, 413, 'Level of satisfaction with the interface', 1, 2),
+(109, 414, 'Only usability testing', 0, 2),
+(109, 415, 'Technical performance', 0, 2),
+(109, 416, 'Visual appeal', 0, 2),
+
+(110, 417, 'Effectiveness, efficiency, satisfaction', 1, 2),
+(110, 418, 'Aesthetic appeal, functionality, reliability', 0, 2),
+(110, 419, 'Speed, accuracy, satisfaction', 0, 2),
+(110, 420, 'Ease of learning, memorability, satisfaction', 0, 2),
+
+(111, 421, 'Can users achieve what they want?', 1, 2),
+(111, 422, 'How fast users can learn the system', 0, 2),
+(111, 423, 'User enjoyment of the interface', 0, 2),
+(111, 424, 'How many features the system has', 0, 2),
+
+(112, 425, 'Can they do it without wasting effort?', 1, 2),
+(112, 426, 'Do they understand the system', 0, 2),
+(112, 427, 'Is the design aesthetic?', 0, 2),
+(112, 428, 'Is it easy to learn?', 0, 2),
+
+(113, 429, 'Ease of interaction for new users', 1, 2),
+(113, 430, 'Complexity of the system', 0, 2),
+(113, 431, 'Limited user options', 0, 2),
+(113, 432, 'High learning curve', 0, 2),
+
+(114, 433, 'Evaluating the internal state of the system', 1, 2),
+(114, 434, 'Enhancing visual design', 0, 2),
+(114, 435, 'Limiting user input', 0, 2),
+(114, 436, 'Providing comprehensive training', 0, 2),
+
+(115, 437, 'Perceived rate of communication with the system', 1, 2),
+(115, 438, 'Speed of the hardware', 0, 2),
+(115, 439, 'User satisfaction', 0, 2),
+(115, 440, 'Aesthetic appeal', 0, 2),
+
+(116, 441, 'Support for all user tasks', 1, 2),
+(116, 442, 'Only basic tasks', 0, 2),
+(116, 443, 'Limiting functionality', 0, 2),
+(116, 444, 'Complex user interactions', 0, 2),
+
+(117, 445, 'Shortcuts for frequent users', 1, 2),
+(117, 446, 'Ignoring user preferences', 0, 2),
+(117, 447, 'Limiting user control', 0, 2),
+(117, 448, 'Increasing the number of steps', 0, 2),
+
+(118, 449, 'Preventing user mistakes', 1, 2),
+(118, 450, 'Allowing complex interactions', 0, 2),
+(118, 451, 'Reducing user control', 0, 2),
+(118, 452, 'Enhancing aesthetic design', 0, 2),
+
+(119, 453, 'Encouraging exploration of the system', 1, 2),
+(119, 454, 'Limiting user options', 0, 2),
+(119, 455, 'Increasing anxiety', 0, 2),
+(119, 456, 'Ignoring user feedback', 0, 2),
+
+(120, 457, 'User’s understanding of the system', 1, 2),
+(120, 458, 'Only technical specifications', 0, 2),
+(120, 459, 'Visual design', 0, 2),
+(120, 460, 'Complexity of tasks', 0, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(121, 2, 'Learnability refers to how quickly users can learn a system.', 3),
+(122, 2, 'Flexibility allows users to interact in only one way.', 3),
+(123, 2, 'Shneiderman’s rules emphasize the importance of feedback.', 3),
+(124, 2, 'Norman’s rules suggest simplifying the structure of tasks.', 3),
+(125, 2, 'Usability only concerns the aesthetics of the interface.', 3);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(121, 461, 'True', 1, 2),
+(121, 462, 'False', 0, 2),
+
+(122, 463, 'True', 0, 2),
+(122, 464, 'False', 1, 2),
+
+(123, 465, 'True', 1, 2),
+(123, 466, 'False', 0, 2),
+
+(124, 467, 'True', 1, 2),
+(124, 468, 'False', 0, 2),
+
+(125, 469, 'True', 0, 2),
+(125, 470, 'False', 1, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(126, 2, 'Select the CORRECT description of Universal Design.', 5),
+(127, 2, 'Select the INCORRECT principle of Universal Design.', 5);
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(126, 471, 'Accessible and usable by people of all abilities and disabilities.', 1, 2),
+(126, 472, 'Products that can comply to international certification', 0, 2),
+(126, 473, 'Products that can be marketed internationally', 0, 2),
+(126, 474, 'Products that use English as a medium of instruction', 0, 2),
+
+(127, 475, 'Simple and Intuitive to Use', 0, 2),
+(127, 476, 'Flexibility in Use', 0, 2),
+(127, 477, 'Robustness', 1, 2),
+(127, 478, 'Equitable use', 0, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(128, 2, 'The System’s language we will refer to as the _________ language and the User’s language we will refer to as the ___________ language.', 5),
+(129, 2, 'Which of the following are the first three stages of Norman’s cycle?', 5),
+(130, 2, 'What are the four main frameworks of interaction?', 5),
+(131, 2, 'The factors in the physical environment that directly affect the quality of the interaction and the user’s performance are.', 5),
+(132, 2, 'What could be some interface styles between computer and humans?', 5),
+(133, 2, 'A software might allow a user to interact via', 5),
+(134, 2, '_____ play an important role in achieving the goal of designing HCI.', 5);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(128, 479, 'Core, User', 0, 2),
+(128, 480, 'Core, Task', 1, 2),
+(128, 481, 'Task, Core', 0, 2),
+(128, 482, 'Task, User', 0, 2),
+
+(129, 483, 'Requirement, analysis, coding.', 0, 2),
+(129, 484, 'Requirement, analysis, integration', 0, 2),
+(129, 485, 'Establishing goal, forming the intention, specifying the action sequence.', 1, 2),
+(129, 486, 'Establishing the goal, perceiving the system state, executing the action.', 0, 2),
+
+(130, 487, 'The system, user, input, output.', 1, 2),
+(130, 488, 'The user, computer, core, task', 0, 2),
+(130, 489, 'Input, task, output, human.', 0, 2),
+(130, 490, 'None', 0, 2),
+
+(131, 491, 'Physical position, Time.', 0, 2),
+(131, 492, 'Temperature, lightning.', 0, 2),
+(131, 493, 'Noise', 0, 2),
+(131, 494, 'All of these', 1, 2),
+
+(132, 495, 'Command line interface', 0, 2),
+(132, 496, 'Menus', 0, 2),
+(132, 497, 'Point and click', 0, 2),
+(132, 498, 'All of these', 1, 2),
+
+(133, 499, 'Keyboard commands', 0, 2),
+(133, 500, 'Mouse movement', 0, 2),
+(133, 501, 'Voice recognition commands', 0, 2),
+(133, 502, 'All of the mentioned', 1, 2),
+
+(134, 503, 'Capability', 0, 2),
+(134, 504, 'Usability', 1, 2),
+(134, 505, 'Accessibility', 0, 2),
+(134, 506, 'Deliverability', 0, 2);
+
+
+INSERT INTO questions (QuestionID, subjectID, questionText, chapternumber) VALUES
+(135, 2, 'Universal Design aims to create products usable by people of all abilities and disabilities.', 5),
+(136, 2, 'The first stage of Norman’s cycle is execution of action.', 5),
+(137, 2, 'The user’s language is always the same as the system’s language.', 5),
+(138, 2, 'All interface styles are equally effective for all users.', 5),
+(139, 2, 'Usability is a key factor in Human-Computer Interaction design.', 5),
+(140, 2, 'Noise in the physical environment can impact user performance.', 5),
+(141, 2, 'The system and user languages should never overlap.', 5),
+(142, 2, 'Command line interfaces are considered outdated and rarely used.', 5),
+(143, 2, 'All interaction frameworks include user input in some form.', 5),
+(144, 2, 'Accessibility is irrelevant when designing for a general audience.', 5),
+(145, 2, 'Physical position and time are irrelevant factors in user interaction.', 5),
+(146, 2, 'Voice recognition commands are an emerging interface style.', 5),
+(147, 2, 'Designing for HCI does not require knowledge of user capabilities.', 5),
+(148, 2, 'The four main frameworks of interaction include input and output.', 5),
+(149, 2, 'Establishing goals is a critical first step in Norman’s cycle.', 5),
+(150, 2, 'All users prefer graphical interfaces over command line interfaces.', 5);
+
+
+INSERT INTO options (questionID, optionId, optionText, IsCorrect, subjectId) VALUES
+(135, 507, 'True', 1, 2),
+(135, 508, 'False', 0, 2),
+
+(136, 509, 'True', 0, 2),
+(136, 510, 'False', 1, 2),
+
+(137, 511, 'True', 0, 2),
+(137, 512, 'False', 1, 2),
+
+(138, 513, 'True', 0, 2),
+(138, 514, 'False', 1, 2),
+
+(139, 515, 'True', 1, 2),
+(139, 516, 'False', 0, 2),
+
+(140, 517, 'True', 1, 2),
+(140, 518, 'False', 0, 2),
+
+(141, 519, 'True', 0, 2),
+(141, 520, 'False', 1, 2),
+
+(142, 521, 'True', 0, 2),
+(142, 522, 'False', 1, 2),
+
+(143, 523, 'True', 1, 2),
+(143, 524, 'False', 0, 2),
+
+(144, 525, 'True', 0, 2),
+(144, 526, 'False', 1, 2),
+
+(145, 527, 'True', 0, 2),
+(145, 528, 'False', 1, 2),
+
+(146, 529, 'True', 1, 2),
+(146, 530, 'False', 0, 2),
+
+(147, 531, 'True', 0, 2),
+(147, 532, 'False', 1, 2),
+
+(148, 533, 'True', 1, 2),
+(148, 534, 'False', 0, 2),
+
+(149, 535, 'True', 1, 2),
+(149, 536, 'False', 0, 2),
+
+(150, 537, 'True', 0, 2),
+(150, 538, 'False', 1, 2);
+
+
+
+select * from Options WHERE SubjectID = 2</sql><current_tab id="0"/></tab_sql></sqlb_project>

@@ -1,3 +1,15 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic"
+  "java.compile.nullAnalysis.mode": "automatic",
+  "cSpell.words": [
+    "Cognify",
+    "Elferjani",
+    "Fecth",
+    "flipcard",
+    "Ibrahim",
+    "initstate",
+    "Kufam",
+    "Playfair",
+    "quizes",
+    "subjectid"
+  ]
 }

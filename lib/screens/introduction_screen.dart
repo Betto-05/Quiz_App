@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:quiz/screens/main_screen.dart';
+import 'package:quiz/screens/home_screen.dart';
 import 'package:quiz/services/database_services.dart';
 
 class IntroductionScreenPage extends StatelessWidget {
@@ -17,89 +18,26 @@ class IntroductionScreenPage extends StatelessWidget {
       body: IntroductionScreen(
         key: introKey, // Add the key here
         pages: [
-          PageViewModel(
-            titleWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: MediaQuery.of(context).size.height * 0.15),
-                Image.asset("assets/3.png"),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                Text(
-                  "Welcome to Cognify",
-                  style: TextStyle(
-                    color: Colors.blue.shade900,
-                    fontSize: 24,
-                  ),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                Text(
-                  "Sharpen your mind with engaging quizzes!\nChallenge yourself, track progress, and learn smarter.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.blue.shade700,
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            bodyWidget: const Center(),
-            decoration: pageDecoration(),
+          introductionPage(
+            context,
+            imagePath: "assets/3.png",
+            pageTitle: "Welcome to Cognify",
+            description:
+                "Sharpen your mind with engaging quizzes!\nChallenge yourself, track progress, and learn smarter.",
           ),
-          PageViewModel(
-            titleWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: MediaQuery.of(context).size.height * 0.15),
-                Image.asset("assets/4.png", scale: 2.8),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                Text(
-                  "Why Cognify?",
-                  style: TextStyle(
-                    color: Colors.blue.shade900,
-                    fontSize: 24,
-                  ),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                Text(
-                  "Boost your knowledge across various subjects\nChallenge yourself with timed quizzes",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.blue.shade700,
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            bodyWidget: const Center(),
-            decoration: pageDecoration(),
+          introductionPage(
+            context,
+            imagePath: "assets/5.png",
+            pageTitle: "Why Cognify?",
+            description:
+                "Boost your knowledge across various subjects\nChallenge yourself with timed quizzes",
           ),
-          PageViewModel(
-            titleWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: MediaQuery.of(context).size.height * 0.15),
-                Image.asset("assets/2.png"),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                Text(
-                  "Your Learning, Your Way",
-                  style: TextStyle(
-                    color: Colors.blue.shade900,
-                    fontSize: 24,
-                  ),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                Text(
-                  "Pick your favorite subjects and difficulty level. Cognify adapts to your learning style!",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.blue.shade700,
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            bodyWidget: const Center(),
-            decoration: pageDecoration(),
+          introductionPage(
+            context,
+            imagePath: "assets/2.png",
+            pageTitle: "Your Learning, Your Way",
+            description:
+                "Pick your favorite subjects and difficulty level. Cognify adapts to your learning style!",
           ),
           PageViewModel(
             titleWidget: Column(
@@ -168,11 +106,14 @@ class IntroductionScreenPage extends StatelessWidget {
               ),
             );
           } else {
-            DatabaseServices().insetUserName(userName!);
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const MainScreen()),
+            DatabaseServices().insertUserName(userName!);
+
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const MainScreen(),
+              ),
             );
+            DatabaseServices().setNotFirstTime();
           }
         },
 
@@ -204,6 +145,44 @@ class IntroductionScreenPage extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         ),
       ),
+    );
+  }
+
+  PageViewModel introductionPage(BuildContext context,
+      {required String imagePath,
+      required String pageTitle,
+      required String description}) {
+    return PageViewModel(
+      titleWidget: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+          SizedBox(
+              height: 280,
+              child: Image.asset(
+                imagePath,
+              )),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+          Text(
+            pageTitle,
+            style: TextStyle(
+              color: Colors.blue.shade900,
+              fontSize: 24,
+            ),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+          Text(
+            description,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.blue.shade700,
+              fontSize: 14,
+            ),
+          ),
+        ],
+      ),
+      bodyWidget: const Center(),
+      decoration: pageDecoration(),
     );
   }
 

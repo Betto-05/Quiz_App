@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:quiz/screens/exam_prepartion_screen.dart';
+import 'package:quiz/screens/preparation_screen.dart';
 
 class SubjectCard extends StatelessWidget {
   const SubjectCard({super.key, required this.image, required this.subject});
 
-  final String image;
+  final ImageProvider<Object> image;
   final String subject;
 
   @override
@@ -14,7 +14,9 @@ class SubjectCard extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => const ExamPrepartionScreen(),
+            builder: (context) => ChallengePreparationScreen(
+              challenge: subject,
+            ),
           ));
         },
         child: Container(
@@ -23,7 +25,7 @@ class SubjectCard extends StatelessWidget {
               image: DecorationImage(
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.65), BlendMode.srcATop),
-                  image: AssetImage("assets/$image.jpg"),
+                  image: image,
                   fit: BoxFit.cover)),
           width: 140,
           child: Center(

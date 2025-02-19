@@ -40,6 +40,12 @@ dependencies:
   path_provider: ^2.1.5
   introduction_screen: ^3.1.14
   flutter_animated_timer_icon: ^0.0.3
+  flutter_bloc: ^9.0.0
+  modal_progress_hud_nsn: ^0.5.1
+  flutter_flip_card: ^0.0.6
+  meta: ^1.15.0
+  bloc: ^9.0.0
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +57,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/3.png" # Used for iOS only
+  adaptive_icon_foreground: "assets/3.png" # Transparent foreground
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

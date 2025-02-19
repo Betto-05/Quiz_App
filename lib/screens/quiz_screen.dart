@@ -1,142 +1,108 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_timer_icon/flutter_animated_timer_icon.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz/Components/cognify_text_bdy.dart';
+import 'package:quiz/Components/mix_quiz_mode.dart';
+import 'package:quiz/Components/normal_quiz_body.dart';
+import 'package:quiz/Components/sudden_death_body.dart';
+import 'package:quiz/Components/time_attack_mode_body.dart';
+import 'package:quiz/cubit/cubit/challenges_cubit.dart';
+import 'package:quiz/screens/home_screen.dart';
 
-class QuizScreen extends StatelessWidget {
-  QuizScreen({super.key});
+class ChallengeScreen extends StatelessWidget {
+  const ChallengeScreen({
+    super.key,
+    required this.challengeName,
+  });
 
-  final animateTimerController = AnimateTimerController();
+  final String challengeName;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Software Engineering",
-          style: TextStyle(fontSize: 14),
-        ),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Card(
-                elevation: 10,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            "Question : 1/10",
-                            style: TextStyle(
-                                fontSize: 10, color: Color(0xff0F469A)),
-                          ),
-                          AnimateTimer(
-                              animationBehaviorPreserve: true,
-                              animationDuration: 30,
-                              animateTimerController: animateTimerController)
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text(
-                        "What is SDLC stands for",
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      OptionButton(
-                        color: const Color(0xff0F469A),
-                        textColor: Colors.white,
-                      ),
-                      OptionButton(),
-                      OptionButton(),
-                      OptionButton(),
-                    ],
-                  ),
-                )),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const SizedBox(
-                  width: 15,
-                ),
-                SwitchQuestionButton(
-                  text: "Next",
+    return WillPopScope(
+        onWillPop: () async {
+          showDialog(
+            context: context,
+            builder: (context) => const LeavingChallengeDialog(),
+          );
+
+          return true;
+        },
+        child: Scaffold(
+            appBar: AppBar(
+              leading: IconButton(
+                  // onPressed: BackButtonChallenge(context),
                   onPressed: () {
-                    animateTimerController.restart();
+                    showDialog(
+                      context: context,
+                      builder: (context) => const LeavingChallengeDialog(),
+                    );
                   },
-                )
-              ],
-            )
-          ],
-        ),
-      ),
-    );
+                  icon: const Icon(Icons.arrow_back)),
+            ),
+            body: challengeName == 'Sudden Death'
+                ? const SuddenDeathBody()
+                : challengeName == 'Time Attack Mode'
+                    ? TimeAttackMode()
+                    : challengeName == 'Cognify Test'
+                        ? CognifyTest()
+                        : challengeName == 'Mix Quiz'
+                            ? MixQuizMode()
+                            : NormalQuiz(
+                                quizTitle: challengeName,
+                              )));
   }
 }
 
-class SwitchQuestionButton extends StatelessWidget {
-  const SwitchQuestionButton(
-      {super.key, required this.text, required this.onPressed});
-
-  final String text;
-  final void Function()? onPressed;
+class LeavingChallengeDialog extends StatelessWidget {
+  const LeavingChallengeDialog({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-      color: Colors.blue.shade900,
-      onPressed: onPressed,
-      child: Text(
-        text,
-        style: const TextStyle(
-          color: Colors.white,
-        ),
+    return AlertDialog(
+      icon: const Icon(Icons.warning, size: 120, color: Colors.red),
+      title: const Text(
+        "Are you sure you want to leave\nour current score won't be count",
+        style: TextStyle(fontSize: 15),
       ),
-    );
-  }
-}
-
-class OptionButton extends StatelessWidget {
-  OptionButton({super.key, this.color, this.textColor});
-
-  Color? color;
-  Color? textColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20.0),
-      child: GestureDetector(
-        onTap: () {},
-        child: Card(
-          color: color,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-          elevation: 6,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-                width: double.infinity,
-                child: Text(
-                  "Devolpment",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 12, color: textColor),
-                )),
+      actions: [
+        Center(
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue.shade900,
+              ),
+              onPressed: () {
+                context.read<ChallengesCubit>().stopTimeAttackModeTimer();
+                context.read<ChallengesCubit>().reset();
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MainScreen(),
+                    ));
+              },
+              child: const Text("OK", style: TextStyle(color: Colors.white)),
+            ),
           ),
         ),
-      ),
+        Center(
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                side: BorderSide(color: Colors.blue.shade900),
+                backgroundColor: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child:
+                  Text("Cancel", style: TextStyle(color: Colors.blue.shade900)),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
