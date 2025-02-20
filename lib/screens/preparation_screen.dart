@@ -27,14 +27,21 @@ class ChallengePreparationScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16)),
                 color: Colors.blue.shade900,
                 onPressed: () async {
-                  challenge == 'Mix Quiz'
+                  challenge == 'Mix Quiz' ||
+                          challenge == 'Cognify Test' ||
+                          challenge == 'Time Attack Mode'
                       ? context
                           .read<ChallengesCubit>()
                           .generateQuestionWithItsOptionsForCognifyTestAndMixQuiz(
                               questionsNumber: 10)
-                      : context
-                          .read<ChallengesCubit>()
-                          .generateQuestionWithItsOptions();
+                      : challenge == 'Sudden Death'
+                          ? context
+                              .read<ChallengesCubit>()
+                              .generateQuestionWithItsOptions()
+                          : context
+                              .read<ChallengesCubit>()
+                              .generateQuestionWithItsOptionsForNormalQuizOnly(
+                                  challenge);
 
                   Navigator.push(
                       context,
