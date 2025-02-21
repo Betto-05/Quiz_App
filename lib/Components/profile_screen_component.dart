@@ -4,15 +4,13 @@ import 'package:flutter_flip_card/controllers/flip_card_controllers.dart';
 import 'package:flutter_flip_card/flipcard/flip_card.dart';
 import 'package:flutter_flip_card/modal/flip_side.dart';
 import 'package:quiz/Components/edit_username_function.dart';
+import 'package:quiz/Components/feedback_feature.dart';
 import 'package:quiz/cubit/cubit/fecth_user_data_cubit.dart';
 import 'package:quiz/cubit/cubit/theme_cubit.dart';
 
 // This is the grid view that shows the settings cards in the profile screen
 class SettingsBody extends StatelessWidget {
-  const SettingsBody({
-    super.key,
-    required this.userName,
-  });
+  SettingsBody({super.key, required this.userName});
 
   final String userName;
 
@@ -53,93 +51,7 @@ class SettingsBody extends StatelessWidget {
                   cardName: "Feedback",
                   icon: Icons.feedback,
                   onTap: () {
-                    // showDialog(
-                    //   context: context,
-                    //   builder: (context) {
-                    //     return AlertDialog(
-                    //       actions: [
-                    //         SizedBox(
-                    //           height: MediaQuery.of(context).size.height * 0.02,
-                    //         ),
-                    //         TextField(
-                    //           onChanged: (value) {
-                    //             userName = value;
-                    //           },
-                    //           decoration: InputDecoration(
-                    //             hintText: "Title",
-                    //             hintStyle: const TextStyle(
-                    //               fontSize: 12,
-                    //             ),
-                    //             border: OutlineInputBorder(
-                    //               borderRadius: BorderRadius.circular(16),
-                    //             ),
-                    //           ),
-                    //         ),
-                    //         SizedBox(
-                    //           height: MediaQuery.of(context).size.height * 0.02,
-                    //         ),
-                    //         SizedBox(
-                    //           height: 150,
-                    //           child: TextField(
-                    //               onChanged: (value) {
-                    //                 userName = value;
-                    //               },
-                    //               decoration: InputDecoration(
-                    //                 contentPadding: EdgeInsets.symmetric(
-                    //                     vertical: 150, horizontal: 8),
-                    //                 hintText: "Description",
-                    //                 hintStyle: const TextStyle(fontSize: 12),
-                    //                 border: OutlineInputBorder(
-                    //                   borderRadius: BorderRadius.circular(16),
-                    //                 ),
-                    //               )),
-                    //         ),
-                    //         SizedBox(
-                    //           height: 12,
-                    //         ),
-                    //         MaterialButton(
-                    //           height: 45,
-                    //           color: Colors.blue.shade900,
-                    //           shape: OutlineInputBorder(
-                    //               borderSide:
-                    //                   BorderSide(color: Colors.transparent),
-                    //               borderRadius: BorderRadius.circular(16)),
-                    //           onPressed: () {},
-                    //           child: Center(
-                    //             child: Text(
-                    //               "Submit",
-                    //               style: TextStyle(
-                    //                   color: Colors.white,
-                    //                   fontSize: 18,
-                    //                   fontWeight: FontWeight.bold),
-                    //             ),
-                    //           ),
-                    //         ),
-                    //         SizedBox(
-                    //           height: 8,
-                    //         ),
-                    //         MaterialButton(
-                    //           height: 45,
-                    //           color: Colors.white,
-                    //           shape: OutlineInputBorder(
-                    //               borderSide:
-                    //                   BorderSide(color: Colors.blue.shade900),
-                    //               borderRadius: BorderRadius.circular(16)),
-                    //           onPressed: () {},
-                    //           child: Center(
-                    //             child: Text(
-                    //               "Cancel",
-                    //               style: TextStyle(
-                    //                   color: Colors.blue.shade900,
-                    //                   fontSize: 18,
-                    //                   fontWeight: FontWeight.bold),
-                    //             ),
-                    //           ),
-                    //         )
-                    //       ],
-                    //     );
-                    //   },
-                    // );
+                    feedbackfeature(context);
                   },
                 ),
                 ProfileCards(

@@ -46,6 +46,7 @@ class NormalQuiz extends StatelessWidget {
                   .startTimerForMixQuizAndNormalQuiz(animateTimerController);
             }
             if (state is ChallengeEnd) {
+              animateTimerController.stop();
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(

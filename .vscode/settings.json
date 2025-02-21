@@ -4,6 +4,7 @@
     "Cognify",
     "Elferjani",
     "Fecth",
+    "feedbackfeature",
     "flipcard",
     "Ibrahim",
     "initstate",
@@ -11,5 +12,6 @@
     "Playfair",
     "quizes",
     "subjectid"
-  ]
+  ],
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

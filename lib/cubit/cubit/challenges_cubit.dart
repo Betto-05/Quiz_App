@@ -74,7 +74,9 @@ class ChallengesCubit extends Cubit<ChallengesState> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ChallengeResultScreen(score: score),
+            builder: (context) => ChallengeResultScreen(
+              score: score,
+            ),
           ));
     });
 
@@ -104,12 +106,15 @@ class ChallengesCubit extends Cubit<ChallengesState> {
 
     if (questionsCounter < 10) {
       _questionTimer = Timer(const Duration(seconds: 30), () {
-        animateTimerController.restart();
-        incrementQuestionCounter();
-        generateQuestionWithItsOptions();
+        if (state is NextQuestionSuccessful) {
+          animateTimerController.restart();
+          incrementQuestionCounter();
+          generateQuestionWithItsOptions();
+        }
       });
     } else {
       _questionTimer?.cancel();
+      animateTimerController.stop();
       emit(ChallengeEnd());
     }
   }

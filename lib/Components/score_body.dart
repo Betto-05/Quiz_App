@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz/Components/buttons.dart';
 
 class NormalQuizScoreBody extends StatelessWidget {
   const NormalQuizScoreBody(
@@ -59,14 +58,6 @@ class NormalQuizScoreBody extends StatelessWidget {
             fontSize: 16,
           ),
         ),
-        const SizedBox(
-          height: 120,
-        ),
-        const ProvideFeedbackButton(),
-        const SizedBox(
-          height: 25,
-        ),
-        const BackToHomeButton(),
       ],
     );
   }

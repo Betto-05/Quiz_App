@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz/Components/feedback_feature.dart';
 import 'package:quiz/cubit/cubit/challenges_cubit.dart';
 
 import 'package:quiz/screens/home_screen.dart';
@@ -58,9 +59,9 @@ class OptionButton extends StatelessWidget {
 }
 
 class ProvideFeedbackButton extends StatelessWidget {
-  const ProvideFeedbackButton({
-    super.key,
-  });
+  const ProvideFeedbackButton({super.key, required this.userName});
+
+  final String userName;
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +71,11 @@ class ProvideFeedbackButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             side: BorderSide(color: Colors.blue.shade900)),
         color: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          feedbackfeature(
+            context,
+          );
+        },
         child: Center(
           child: Text(
             "Provide a Feedback",

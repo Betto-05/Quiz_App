@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:quiz/Components/buttons.dart';
 
 class ChallengeResultScreen extends StatelessWidget {
-  const ChallengeResultScreen({super.key, required this.score});
+  const ChallengeResultScreen({
+    super.key,
+    required this.score,
+  });
   final int score;
 
   @override
@@ -92,7 +95,7 @@ class ScoreBody extends StatelessWidget {
         const SizedBox(
           height: 120,
         ),
-        const ProvideFeedbackButton(),
+        ProvideFeedbackButton(userName: ""),
         const SizedBox(
           height: 25,
         ),

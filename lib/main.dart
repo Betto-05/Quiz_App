@@ -1,16 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz/cubit/cubit/challenges_cubit.dart';
 import 'package:quiz/cubit/cubit/fecth_user_data_cubit.dart';
 import 'package:quiz/cubit/cubit/fetch_subject_cubit.dart';
 import 'package:quiz/cubit/cubit/theme_cubit.dart';
+import 'package:quiz/firebase_options.dart';
 import 'package:quiz/screens/home_screen.dart';
 import 'package:quiz/screens/introduction_screen.dart';
 import 'package:quiz/services/database_services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DatabaseServices().database;
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const Cognify());
 }
