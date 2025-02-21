@@ -87,19 +87,6 @@ class ChallengesCubit extends Cubit<ChallengesState> {
     timeAttackModeTimer?.cancel();
   }
 
-  void questionTimedOut(context) async {
-    _questionTimer?.cancel();
-
-    if (questionsCounter <= 10) {
-      _questionTimer = Timer(const Duration(seconds: 30), () {
-        incrementQuestionCounter();
-        generateQuestionWithItsOptions();
-      });
-    } else {
-      _questionTimer?.cancel();
-    }
-  }
-
   void startTimerForMixQuizAndNormalQuiz(
       AnimateTimerController animateTimerController) {
     _questionTimer?.cancel();
@@ -110,6 +97,7 @@ class ChallengesCubit extends Cubit<ChallengesState> {
           animateTimerController.restart();
           incrementQuestionCounter();
           generateQuestionWithItsOptions();
+          DatabaseServices().updateSkippedQuestionsCounter();
         }
       });
     } else {

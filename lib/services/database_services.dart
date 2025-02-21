@@ -322,4 +322,10 @@ class DatabaseServices {
 
     await db.rawUpdate('Update Users SET CognifyTestWinner =1');
   }
+
+  void updateSkippedQuestionsCounter() async {
+    final db = await database;
+
+    await db.rawUpdate('Update Users SET SkippedAnswers =SkippedAnswers+1');
+  }
 }
